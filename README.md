@@ -16,29 +16,29 @@
 
 ##  项目目录结构
 helmet-detect-rag/
-├─ gradio_app.py            # Web 应用启动入口
+├─ gradio_app.py           
 ├─ README.md
-├─ requirements.txt          # Python 依赖清单
-├─ .gitignore                # Git 忽略配置
+├─ requirements.txt        
+├─ .gitignore               
 ├─ LICENSE
-├─ yolo-bvn.yaml             # YOLO 数据集配置文件
-├─ asset/                    # 演示示例图片
-├─ rag_app/                  # Web、检测、RAG 核心代码包
+├─ yolo-bvn.yaml            
+├─ asset/                    
+├─ rag_app/                  
 │  ├─ __init__.py
-│  ├─ app.py                 # Gradio 页面主业务代码
-│  ├─ config.py              # 项目全局配置
-│  ├─ detector.py            # YOLO 推理封装模块
-│  ├─ knowledge_base.py      # RAG 知识库管理
-│  └─ rag_chain.py           # RAG 检索与生成链路
-├─ scripts/                  # 训练、数据处理、评估脚本
-│  ├─ clearn_dataset.py      # 数据集清洗脚本
-│  ├─ load_dataset.py        # 数据集加载工具
-│  ├─ train.py               # YOLO 模型训练入口
-│  ├─ verify.py              # 模型验证，输出 mAP/Precision/Recall
-│  ├─ detect.py              # 单图快速推理测试脚本
-│  └─ index_detect.py        # 批量图片检测索引导出脚本
-├─ runs/                     # YOLO 训练输出、权重
-└─ tests/                    # 单元测试目录
+│  ├─ app.py                 
+│  ├─ config.py            
+│  ├─ detector.py           
+│  ├─ knowledge_base.py     
+│  └─ rag_chain.py          
+├─ scripts/                 
+│  ├─ clearn_dataset.py     
+│  ├─ load_dataset.py       
+│  ├─ train.py              
+│  ├─ verify.py             
+│  ├─ detect.py             
+│  └─ index_detect.py       
+├─ runs/                     
+└─ tests/                   
 ## 🛠️ 环境准备
 
 ### 1. 克隆仓库并安装依赖
@@ -82,7 +82,7 @@ python -m rag_app.app
 
 ---
 
-## 🏋️ 完整模型训练复现流程
+## 完整模型训练复现流程
 
 > 仓库不提供数据集与训练好的权重文件，需要自行准备 YOLO 标注数据集。
 
@@ -107,7 +107,7 @@ python scripts/verify.py
 
 ---
 
-## ⚠️ 重要说明
+## 重要说明
 
 - 本仓库不存放**数据集、训练权重、RAG 向量库**，需用户自行准备数据集、训练模型、配置大模型密钥。
 - 项目默认面向**监控抓拍静态图片**；视频检测为扩展方向，可基于 `detector` 推理模块增加 OpenCV 帧读取与 ByteTrack 跟踪。
