@@ -39,7 +39,7 @@ helmet-detect-rag/
 │  └─ index_detect.py       
 ├─ runs/                     
 └─ tests/                   
-## 🛠️ 环境准备
+##  环境准备
 
 ### 1. 克隆仓库并安装依赖
 
