@@ -1,0 +1,24 @@
+﻿# YOLOv8 框架（本仓库 ultralytics/ 源码，推荐可编辑安装：pip install -e .）
+# 如不想使用源码，注释掉上一行改为从 PyPI 安装：
+# ultralytics>=8.0
+
+# Web 交互界面
+gradio>=4.0
+
+# RAG 链路：LangChain + Chroma 向量库 + 本地中文嵌入 + DeepSeek 在线 LLM
+langchain>=0.2
+langchain-chroma>=0.1
+langchain-huggingface>=0.0.3
+langchain-openai>=0.1
+langchain-text-splitters>=0.2
+chromadb>=0.5
+transformers>=4.40
+sentence-transformers
+
+# 环境变量与配置
+python-dotenv
+
+# 图像处理（scripts/yolo_infer.py、scripts/clearn_dataset.py 依赖）
+opencv-python
+pillow
+numpy

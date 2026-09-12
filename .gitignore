@@ -1,0 +1,177 @@
+# Python编译/优化后的缓存文件、动态库文件
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C语言扩展编译文件
+*.so
+
+# 打包发布相关产生的临时文件
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller打包exe时生成的清单和配置文件
+*.manifest
+*.spec
+
+# pip安装日志文件
+pip-log.txt
+pip-delete-this-directory.txt
+
+# 单元测试、代码覆盖率报告文件
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+mlruns/
+
+# 国际化翻译编译文件
+*.mo
+*.pot
+
+# Django框架自动生成的日志、本地配置、数据库文件
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask框架实例目录、静态资源缓存
+instance/
+.webassets-cache
+
+# Scrapy爬虫框架缓存
+.scrapy
+
+# Sphinx文档生成工具，文档编译输出目录
+docs/_build/
+
+# PyBuilder构建工具输出目录
+target/
+
+# Jupyter Notebook笔记本缓存文件夹
+.ipynb_checkpoints
+
+# IPython交互解释器配置文件
+profile_default/
+ipython_config.py
+
+# 性能分析文件
+*.pclprof
+
+# pyenv Python版本管理器版本记录文件
+.python-version
+
+# pipenv虚拟环境锁定文件（注释：官方建议纳入版本管理；
+# 但如果依赖有平台专属包、跨平台容易出错，可以不提交）
+#Pipfile.lock
+
+# PEP 582规范，pyflow等工具使用的本地包目录
+__pypackages__/
+
+# Celery异步任务框架的调度文件、进程PID文件
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath数学软件生成的解析文件
+*.sage.py
+
+# 环境相关：密钥配置、虚拟环境、编辑器配置
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder编辑器项目配置
+.spyderproject
+.spyproject
+
+# VSCode编辑器项目配置、开发容器配置
+.vscode/
+.devcontainer/
+
+# Rope代码重构工具缓存
+.ropeproject
+
+# mkdocs静态网站文档输出目录
+/site
+
+# mypy静态类型检查缓存
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre类型检查器缓存
+.pyre/
+
+# 数据集与训练记录：只忽略根目录下的datasets文件夹（保留文档内的datasets）
+/datasets
+runs/
+wandb/
+.DS_Store
+
+# 神经网络模型权重文件（重点！YOLO模型pt、onnx等全部忽略）
+weights/
+*.weights
+*.pt
+*.ts
+*.pb
+*.onnx
+*.engine
+*.mlmodel
+*.mlpackage
+*.torchscript
+*.tflite
+*.h5
+*.mnn
+*_saved_model/
+*_web_model/
+*_openvino_model/
+*_paddle_model/
+*_ncnn_model/
+*_imx_model/
+pnnx*
+*.rknn
+
+# 模型校准npy文件
+calibration_*.npy
+
+# 向量数据库Chroma
+rag_app/chroma_db/
+
+# 数据集
+bvn/
+
+
+# 包元数据（pip install -e . 自动重建）
+ultralytics.egg-info/
+
+# IDE 配置
+.idea/

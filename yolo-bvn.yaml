@@ -1,0 +1,15 @@
+# 自定义数据集配置文件
+# 数据集根目录（可以是相对路径或绝对路径）
+path: bvn  # 数据集主目录
+
+# 训练、验证、测试集图像路径（相对于path）
+train: helmet/images/train  # 训练集图像文件夹
+val: helmet/images/val     # 验证集图像文件夹
+test: helmet/images/test    # 测试集图像文件夹（可选）
+
+# 类别名称
+names:
+  0: head           # 类别0
+  1: helmet              # 类别1
+
+nc: 2  # 类别数量，需与names中的类别数一致
