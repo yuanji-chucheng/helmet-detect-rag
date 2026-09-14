@@ -138,7 +138,7 @@ wandb/
 .DS_Store
 
 # 神经网络模型权重文件（重点！YOLO模型pt、onnx等全部忽略）
-weights/
+
 *.weights
 *.pt
 *.ts

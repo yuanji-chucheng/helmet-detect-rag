@@ -15,30 +15,36 @@
 - RAG智能解读：将YOLO检测结果送入RAG模块，自动生成检测报告、异常情况分析文本。
 
 ##  项目目录结构
+```text
 helmet-detect-rag/
-├─ gradio_app.py           
-├─ README.md
-├─ requirements.txt        
-├─ .gitignore               
-├─ LICENSE
-├─ yolo-bvn.yaml            
-├─ asset/                    
-├─ rag_app/                  
-│  ├─ __init__.py
-│  ├─ app.py                 
-│  ├─ config.py            
-│  ├─ detector.py           
-│  ├─ knowledge_base.py     
-│  └─ rag_chain.py          
-├─ scripts/                 
-│  ├─ clearn_dataset.py     
-│  ├─ load_dataset.py       
-│  ├─ train.py              
-│  ├─ verify.py             
-│  ├─ detect.py             
-│  └─ index_detect.py       
-├─ runs/                     
-└─ tests/                   
+├── app.py                  # Gradio Web 应用启动入口
+├── requirements.txt
+├── yolo-bvn.yaml
+├── LICENSE
+├── .gitignore
+├── README.md
+│
+├── asset/                  # 演示图片等静态资源
+├── examples/
+├── knowledge_base/         # RAG 知识库原始文档
+│
+├── rag_app/                # 核心 Web 与 RAG 应用包
+│   ├── __init__.py
+│   ├── app.py              # Gradio 页面主业务代码
+│   ├── config.py           # 项目全局配置
+│   ├── detector.py         # YOLO 推理封装模块
+│   ├── knowledge_base.py   # RAG 知识库管理
+│   └── rag_chain.py        # RAG 检索与生成链路
+│
+├── scripts/                # 离线训练与数据处理脚本
+│   ├── clearn_dataset.py   
+│   ├── load_dataset.py
+│   ├── train.py          
+│   ├── verify.py         
+│   ├── detect.py         
+│   └── index_detect.py
+│
+└── tests/                  # 单元测试目录                
 ##  环境准备
 
 ### 1. 克隆仓库并安装依赖

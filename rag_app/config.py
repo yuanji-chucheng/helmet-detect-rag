@@ -34,8 +34,9 @@ KB_PATH = _find_existing(
 
 # ---------- YOLO 权重（复用本地 best.pt） ----------
 BEST_PT_PATH = _find_existing(
+    PROJECT_ROOT / "weights" / "best.pt", 
     PROJECT_ROOT / "runs" / "detect" / "helmet_detect6" / "weights" / "best.pt",
-    PROJECT_ROOT / "runs" / "weights" / "best.pt",
+    PROJECT_ROOT / "runs" / "weights" / "best.pt"
 )
 
 # ---------- Chroma 本地向量数据库 ----------
