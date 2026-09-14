@@ -1,6 +1,6 @@
 ﻿# YOLOv8 框架（本仓库 ultralytics/ 源码，推荐可编辑安装：pip install -e .）
 # 如不想使用源码，注释掉上一行改为从 PyPI 安装：
-# ultralytics>=8.0
+ultralytics>=8.0
 
 # Web 交互界面
 gradio>=4.0
