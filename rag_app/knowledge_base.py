@@ -1,8 +1,7 @@
 """RAG 知识库构建与检索。
 
 流程：读取本地 traffic_safety.md -> 按 Markdown 标题 + 字符长度切分
--> 本地嵌入模型向量化 -> 存入 Chroma 本地向量数据库（持久化到磁盘，
-重复运行自动复用，无需重新嵌入）。
+-> 本地嵌入模型向量化 -> 存入 Chroma 本地向量数据库。
 """
 import shutil
 from functools import lru_cache
@@ -82,6 +81,17 @@ def build_vectorstore(force: bool = False) -> Chroma:
     """
     if force and CHROMA_DIR.exists():
         shutil.rmtree(CHROMA_DIR, ignore_errors=True)
+
+    # 若知识库源文件比向量库目录更新，自动重建以同步最新内容
+    if (
+        not force
+        and CHROMA_DIR.exists()
+        and any(CHROMA_DIR.iterdir())
+        and KB_PATH.exists()
+        and KB_PATH.stat().st_mtime > CHROMA_DIR.stat().st_mtime
+    ):
+        shutil.rmtree(CHROMA_DIR, ignore_errors=True)
+        force = True
 
     # 已存在持久化数据则直接加载复用
     if CHROMA_DIR.exists() and any(CHROMA_DIR.iterdir()):
