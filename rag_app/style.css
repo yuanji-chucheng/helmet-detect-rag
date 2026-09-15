@@ -1,0 +1,132 @@
+/* ================= 字体设置 ================= */
+/* 全局字体设置：中文宋体，英文Times New Roman */
+*, *::before, *::after {
+    font-family: "Times New Roman", "SimSun", "宋体", serif !important;
+}
+
+body, .gradio-container {
+    font-size: 16px !important;
+}
+
+
+.tab-nav button {
+    font-size: 25px !important;
+    font-weight: 600 !important;
+    padding: 10px 20px !important;
+}
+
+/* ================= 全局布局 ================= */
+.equal-height-column {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* ================= 第一页：检测面板 ================= */
+.right-panel {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* 关键修复：锁定图片框高度，防止检测前/后高度突变 */
+.fixed-image-box {
+    height: 480px !important; 
+    min-height: 480px !important;
+    max-height: 480px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    overflow: hidden !important;
+    background-color: var(--block-background-fill) !important;
+    border: 1px solid var(--border-color-primary) !important;
+    border-radius: var(--block-radius) !important;
+    flex-grow: 0;
+}
+
+.fixed-image-box img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important; /* 保持比例完整显示，不裁剪不拉伸 */
+}
+
+/* 统计与风险卡片 */
+.stats-wrapper {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.stats-box, .risk-box {
+    background: var(--block-background-fill);
+    padding: 20px;
+    border-radius: var(--block-radius);
+    border: 1px solid var(--border-color-primary);
+    font-size: 1.05rem !important;
+    line-height: 1.6;
+}
+
+.stats-box {
+    flex-grow: 0;
+}
+
+.risk-box {
+    flex-grow: 1;
+    min-height: 200px;
+}
+
+/* ================= 第二页：问答面板 ================= */
+.chat-container {
+    max-width: 1000px !important;
+    margin: 0 auto !important;
+    display: flex;
+    flex-direction: column;
+    height: 78vh;
+    border: 1px solid var(--border-color-primary);
+    border-radius: var(--block-radius);
+    padding: 20px;
+    background: var(--block-background-fill);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.chatbot-area {
+    flex-grow: 1;
+    border: none !important;
+    overflow-y: auto;
+    font-size: 1.05rem !important;
+}
+
+.input-row {
+    margin-top: 15px;
+}
+
+/* 输入框美化（阴影 + 大字号） */
+#question-input textarea {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+    font-size: 1.1rem !important;
+    padding: 14px 16px !important;
+    border: 1px solid #e5e7eb !important;
+    border-radius: 8px !important;
+    transition: all 0.3s ease !important;
+}
+
+#question-input textarea:focus {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+    border-color: #6366f1 !important;
+}
+
+/* 动态思考动画 */
+.waiting-animation {
+    animation: pulse-opacity 1.2s infinite ease-in-out;
+    display: inline-block;
+    font-weight: bold;
+    color: #6366f1;
+}
+
+@keyframes pulse-opacity {
+    0% { opacity: 0.3; }
+    50% { opacity: 1; }
+    100% { opacity: 0.3; }
+}
